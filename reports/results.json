@@ -1,0 +1,173 @@
+{
+  "title": "P&G Media Spend Optimizer",
+  "company": "Procter & Gamble",
+  "kpis": [
+    {
+      "label": "Annual spend",
+      "value": "$137.9M",
+      "note": "6 channels"
+    },
+    {
+      "label": "Blended ROI",
+      "value": "4.93x",
+      "note": "Revenue per $ of media"
+    },
+    {
+      "label": "Inefficient spend",
+      "value": "$23.8M",
+      "note": "Moved out of saturated channels"
+    },
+    {
+      "label": "Profit uplift",
+      "value": "+$32.6M",
+      "note": "per year at +0% budget"
+    }
+  ],
+  "algorithm": [
+    {
+      "step": "Collect and align data",
+      "output": "104 weeks x 6 channels, $275.8M total spend"
+    },
+    {
+      "step": "Adstock transform",
+      "output": "Decay: TV 0.7, Paid 0.2, Social 0.4, Retail 0.4, Influencers 0.7, Programmatic 0.7"
+    },
+    {
+      "step": "Marketing Mix Model",
+      "output": "R\u00b2 = 0.970"
+    },
+    {
+      "step": "Saturation curves",
+      "output": "Half-saturation: TV $3.1M, Paid $397K, Social $673K, Retail $612K, Influencers $911K, Programmatic $1.1M"
+    },
+    {
+      "step": "ROI and marginal ROI",
+      "output": "Blended ROI 4.93x; lowest Influencers"
+    },
+    {
+      "step": "Profitability check",
+      "output": "Profit ROI below 1x: TV, Influencers"
+    },
+    {
+      "step": "Budget optimizer",
+      "output": "Weekly profit $3.1M -> $3.7M"
+    },
+    {
+      "step": "LLM memo",
+      "output": "Ready"
+    }
+  ],
+  "tables": {
+    "Channel scorecard": [
+      {
+        "channel": "Retail Media",
+        "annual_spend": 19195350.0,
+        "attributed_revenue": 214021816.0,
+        "roi": 11.15,
+        "marginal_roi": 5.61,
+        "profit_roi": 5.62,
+        "decay": 0.4,
+        "current_share": 0.139,
+        "recommended_share": 0.207,
+        "change_pct": 49.0
+      },
+      {
+        "channel": "Paid Search",
+        "annual_spend": 16841650.0,
+        "attributed_revenue": 168455911.0,
+        "roi": 10.0,
+        "marginal_roi": 5.0,
+        "profit_roi": 4.83,
+        "decay": 0.2,
+        "current_share": 0.122,
+        "recommended_share": 0.181,
+        "change_pct": 48.0
+      },
+      {
+        "channel": "Social Media",
+        "annual_spend": 21953600.0,
+        "attributed_revenue": 104552601.0,
+        "roi": 4.76,
+        "marginal_roi": 2.34,
+        "profit_roi": 1.6,
+        "decay": 0.4,
+        "current_share": 0.159,
+        "recommended_share": 0.19,
+        "change_pct": 19.0
+      },
+      {
+        "channel": "Programmatic Display",
+        "annual_spend": 16434700.0,
+        "attributed_revenue": 88273013.0,
+        "roi": 5.37,
+        "marginal_roi": 2.74,
+        "profit_roi": 1.47,
+        "decay": 0.7,
+        "current_share": 0.119,
+        "recommended_share": 0.135,
+        "change_pct": 13.0
+      },
+      {
+        "channel": "TV",
+        "annual_spend": 49235600.0,
+        "attributed_revenue": 105148922.0,
+        "roi": 2.14,
+        "marginal_roi": 1.08,
+        "profit_roi": 0.9,
+        "decay": 0.7,
+        "current_share": 0.357,
+        "recommended_share": 0.236,
+        "change_pct": -34.0
+      },
+      {
+        "channel": "Influencers",
+        "annual_spend": 14250250.0,
+        "attributed_revenue": 0.0,
+        "roi": 0.0,
+        "marginal_roi": 0.0,
+        "profit_roi": 0.0,
+        "decay": 0.7,
+        "current_share": 0.103,
+        "recommended_share": 0.052,
+        "change_pct": -50.0
+      }
+    ]
+  },
+  "recommendations": [
+    {
+      "title": "Cut Influencers by 50%",
+      "body": "Each extra dollar returns $0.00 of revenue (0.00x profit ROI after margin and customer value). It is past its saturation point.",
+      "impact": "-$7.1M/yr"
+    },
+    {
+      "title": "Cut TV by 34%",
+      "body": "Each extra dollar returns $1.08 of revenue (0.90x profit ROI after margin and customer value). It is past its saturation point.",
+      "impact": "-$16.7M/yr"
+    },
+    {
+      "title": "Scale Retail Media by 49%",
+      "body": "Marginal ROI of $5.61 per dollar and its response curve is still rising.",
+      "impact": "+$9.4M/yr"
+    },
+    {
+      "title": "Scale Paid Search by 48%",
+      "body": "Marginal ROI of $5.00 per dollar and its response curve is still rising.",
+      "impact": "+$8.1M/yr"
+    },
+    {
+      "title": "Scale Social Media by 19%",
+      "body": "Marginal ROI of $2.34 per dollar and its response curve is still rising.",
+      "impact": "+$4.2M/yr"
+    },
+    {
+      "title": "Scale Programmatic Display by 13%",
+      "body": "Marginal ROI of $2.74 per dollar and its response curve is still rising.",
+      "impact": "+$2.1M/yr"
+    },
+    {
+      "title": "Test before moving the full amount",
+      "body": "Run 6 to 8 week geo holdout tests on the two biggest changes and feed the measured lift back into the model.",
+      "impact": "6-8 weeks"
+    }
+  ]
+}

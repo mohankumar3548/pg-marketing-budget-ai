@@ -1,0 +1,51 @@
+{
+  "num": "01",
+  "area": "Marketing",
+  "product": "Budget Optimizer",
+  "title": "P&G Media Spend Optimizer",
+  "company": "Procter & Gamble",
+  "why": "P&G spends billions a year across TV, digital, retail media and influencers, and it has publicly cut digital spend that was not driving sales. This tool finds which channels pay back and moves money to them.",
+  "problem": "A company is spending heavily across multiple marketing channels, but management cannot determine which campaigns generate profitable customers. Develop an AI-driven system that analyzes campaign, customer, conversion and revenue data to identify inefficient spending, estimate campaign effectiveness, and recommend how the marketing budget could be reallocated.",
+  "data_note": "104 weeks of spend, revenue, conversions and customer value across 6 channels for one P&G category (sample data).",
+  "steps": [
+    {
+      "step": "Collect and align data",
+      "detail": "Weekly spend, revenue, conversions and customer value per channel"
+    },
+    {
+      "step": "Adstock transform",
+      "detail": "Grid search the carry-over decay for each channel"
+    },
+    {
+      "step": "Marketing Mix Model",
+      "detail": "Regression of revenue on transformed spend, with seasonality"
+    },
+    {
+      "step": "Saturation curves",
+      "detail": "Hill curve per channel to find diminishing returns"
+    },
+    {
+      "step": "ROI and marginal ROI",
+      "detail": "Revenue per $ now, and for the next $"
+    },
+    {
+      "step": "Profitability check",
+      "detail": "Weight ROI by the lifetime value of customers each channel brings"
+    },
+    {
+      "step": "Budget optimizer",
+      "detail": "Greedy reallocation in 1% steps toward the highest marginal profit"
+    },
+    {
+      "step": "LLM memo",
+      "detail": "AI analyst explains the plan below"
+    }
+  ],
+  "questions": [
+    "Which channel is wasting the most money?",
+    "Why should we cut TV if its ROI looks fine?",
+    "What happens if we cut the budget by 20%?",
+    "How confident should we be in this model?"
+  ],
+  "author": "K Mohan Kumar"
+}
